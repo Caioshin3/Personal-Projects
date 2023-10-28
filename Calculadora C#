@@ -1,0 +1,59 @@
+using System;
+
+	class Calculadora
+	{
+	 public float valor_1;
+	 public float valor_2;
+	 
+	 public float Somar (){
+	 	return valor_1+valor_2;
+	 }
+	 
+	 public float Subtrair (){
+	 return valor_1-valor_2;
+	 }
+	 
+	 public float Multiplicar (){
+	 return valor_1*valor_2;
+	 }
+	 
+	 public float Dividir (){
+	 return valor_1/valor_2;
+	 }
+	 
+	}
+	class Program
+	{
+	 public int select;
+	 public float result;
+		public static void Main(string[] args)
+		{
+			Program selecionar = new Program();
+			Calculadora calcular = new Calculadora();
+			Console.Write("Digite o primeiro valor: ");
+			calcular.valor_1 = float.Parse(Console.ReadLine());
+			Console.Write("Digite o segundo valor: ");
+			calcular.valor_2 = float.Parse(Console.ReadLine());
+			
+			Console.Write("Digite a opcao de operacao: 1(Soma), 2(Subtrair), 3(Multiplicar), 4(Dividir): ");
+			selecionar.select = int.Parse(Console.ReadLine());
+			switch(selecionar.select){
+				case 1:
+			    selecionar.result = calcular.Somar();
+			    break;
+			    case 2:
+			    selecionar.result = calcular.Subtrair();
+				break;
+			    case 3:
+				selecionar.result = calcular.Multiplicar();
+			    break;
+			    case 4:
+			    selecionar.result = calcular.Dividir();
+			    break;
+			}
+			Console.WriteLine("O resultado e: " + selecionar.result);
+			Console.ReadKey(true);
+		}
+	}
+
+	
